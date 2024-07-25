@@ -1,0 +1,138 @@
+import { useEffect, useState } from "react"
+import axios from 'axios'
+
+function Prestamo({data,FilterValue,SetLog}){
+    const [newData, setNewData]= useState(data)
+    const [IpLists,SetIps]= useState(newData.map((element)=>{return {Id: element.Id,DirIp:element.DirIp}}))
+    function handleFilter(e){
+        const form = e.target.value;
+        let newFilter = data.map((element)=>{
+            if(element.Marca === form) {return element}
+        })
+        newFilter = newFilter.filter((element)=>{
+            return element!==undefined
+        })
+        setNewData(newFilter)
+    }
+
+    function HandleIps(e){
+        const Model = e.target.value;
+        const IpFilter = newData.filter((element)=>{
+            return element.Modelo === Model
+        })
+        SetIps(IpFilter)
+    }
+
+    useEffect(()=>{
+        const newIps = newData.map((element)=>{return {Id: element.Id,DirIp:element.DirIp}})
+        SetIps(newIps) 
+    },[newData])
+    function handleDevice(e){
+        e.preventDefault()
+        const form = e.target;
+        const formData = new FormData(form)
+        const Formdata = Object.fromEntries(formData.entries())
+        const {Name, email, Model,DirIp,ExpasionModule} = Formdata;
+        requestServer(Name, email, Model,DirIp,ExpasionModule).then(result=>{
+            if (result.Response=== "Succesfull"){
+                alert("Prestamo realizado, revisa tu correo!")
+                SetLog("NoLog")
+            }else{
+                alert("Algo sucedio :( revisa bien los datos ingresados")
+                SetLog("NoLog")
+            }
+            
+        }).catch(()=>{
+            alert("Algo sucedio :( revisa bien los datos ingresados")
+            SetLog("NoLog")
+        })
+    }
+    async function requestServer (Name, email, Model,DirIp,ExpasionModule){
+        const result = await axios.post("http://172.31.36.30:4000/api/prestamo",{
+            Nombre:Name,
+            email: email,
+            Modelo: Model,
+            Direccion_IP: DirIp,
+            ModulosExpansion: ExpasionModule
+        })
+        return result.data
+    }
+        return(
+        <>
+            <header>
+                <h1>Laboratorio de redes industriales</h1>
+            </header>
+            <article>
+                <h2>Plataforma de prestamo de equipos</h2>
+                <h4>Ingrese todos los campos</h4>
+            </article>  
+            <span>
+                <form action="POST" onSubmit={handleDevice}>
+                    <fieldset>
+                        <legend>Filtro</legend>
+                        <input list="DeviceBrand" name="DeviceBrand" onChange={handleFilter} 
+                        title="Puede buscar los dispositivos por Marca, este campo es opcional"
+                        placeholder="Marca"/>
+                        <datalist id="DeviceBrand">
+                            {
+                               FilterValue.map((element)=>{
+
+                                    return(
+                                        <option key={element.Marca} value={element.Marca}></option>
+                                    )
+                                
+                               })
+                               
+                            }
+                        </datalist>
+                    </fieldset>
+                    <fieldset>
+                        <legend>Datos del prestamo</legend>
+
+                        <input type="text" name="Name" placeholder="Nombre" 
+                        required title="Nombre y apellido"/>
+                        <input type="email" name="email" 
+                        placeholder="email" required title="email"/>
+                        <input list="modeloList" name="Model" 
+                        placeholder="Modelo" required onChange={HandleIps}/>
+                        <datalist id="modeloList">
+                            {
+                                newData.map(element=>{
+                                    if(element?.Marca){
+                                        return(
+                                            <option key={element.Id} value={element.Modelo}></option>
+                                        )
+                                    }
+                                    
+                                })
+                            }
+                        </datalist>
+                        <input list="IpList" name="DirIp" placeholder="Dirección IP/Otros" 
+                        title="Dirección IP del dispositivo" autoComplete="off"/>
+                            <datalist id="IpList">
+                                {
+                                        IpLists.map(element=>{
+                                            if(element?.DirIp){
+                                                return(
+                                                    <option key={`${element.Id}-${element.DirIp}`} value={element.DirIp}></option>
+                                                )
+                                            }
+                                            
+                                        })   
+                                }
+                            </datalist>
+                        <input type="text" name="ExpasionModule" placeholder="Módulo de expansión" 
+                        title="Si el dispositivo prestado tiene módulo de expasion colocar el modelo del mismo" 
+                        />
+                        <div className="password-button">
+                            <button>Realizar prestamo</button>
+                        </div>
+                        
+                    </fieldset>
+                </form>
+            </span>
+        </>
+    )
+}
+
+export default Prestamo
