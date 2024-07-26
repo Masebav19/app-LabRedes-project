@@ -27,10 +27,12 @@ body {
   padding: 20px;
   border: 2px solid #00ABE4;
   border-radius: 10px;
+  
 }
 .Major-container:hover{
   transform: scale(1.01);
   box-shadow: 4px 2px 2px 2px #63d8ff;
+  
 }
 
 form{
@@ -40,26 +42,6 @@ fieldset{
   display: grid;
 }
 
-input {
-  font-family: inherit;
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #00ABE4;
-  outline: 0;
-  font-size: 17px;
-  color: #242424;
-  background: transparent;
-  padding: 7px 0;
-  transition: border-color 0.2s;
-}
-
-input:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #fdfdfd, #63d8ff);
-  border-image-slice: 1;
-}
 .password-button{
   display: grid;
   padding-top: 4vh;
@@ -78,4 +60,41 @@ button:hover{
 }
 
 
+.group {
+  display: flex;
+  line-height: 30px;
+  align-items: center;
+  position: relative;
+  max-width: 100vw;
+}
+
+.input {
+  width: 100%;
+  line-height: 30px;
+  padding: 0 5rem;
+  padding-left: 3rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  outline: none;
+  background-color: transparent;
+  color: #0d0c22;
+  border: 0.5px solid #63d8ff55;
+}
+
+
+.input:focus, input:hover {
+  padding-bottom: inherit;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #fdfdfd, #63d8ff);
+  border-image-slice: 1;
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  fill: none;
+  width: 1rem;
+  height: 1rem;
+}
 

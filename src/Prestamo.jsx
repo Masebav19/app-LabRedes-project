@@ -70,32 +70,45 @@ function Prestamo({data,FilterValue,SetLog}){
                 <form action="POST" onSubmit={handleDevice}>
                     <fieldset>
                         <legend>Filtro</legend>
-                        <input list="DeviceBrand" name="DeviceBrand" onChange={handleFilter} 
-                        title="Puede buscar los dispositivos por Marca, este campo es opcional"
-                        placeholder="Marca"/>
-                        <datalist id="DeviceBrand">
-                            {
-                               FilterValue.map((element)=>{
+                        <div className="group">
+                            <img src="../public/filter.svg" alt="Filtro" className="icon" />
+                            <input list="DeviceBrand" name="DeviceBrand" onChange={handleFilter} 
+                            title="Puede buscar los dispositivos por Marca, este campo es opcional"
+                            placeholder="Marca"
+                            className="input"/>
+                            <datalist id="DeviceBrand">
+                                {
+                                FilterValue.map((element)=>{
 
-                                    return(
-                                        <option key={element.Marca} value={element.Marca}></option>
-                                    )
+                                        return(
+                                            <option key={element.Marca} value={element.Marca}></option>
+                                        )
+                                    
+                                })
                                 
-                               })
-                               
-                            }
-                        </datalist>
+                                }
+                            </datalist>
+                        </div>
+                        
                     </fieldset>
                     <fieldset>
                         <legend>Datos del prestamo</legend>
-
-                        <input type="text" name="Name" placeholder="Nombre" 
-                        required title="Nombre y apellido"/>
-                        <input type="email" name="email" 
-                        placeholder="email" required title="email"/>
-                        <input list="modeloList" name="Model" 
-                        placeholder="Modelo" required onChange={HandleIps}/>
-                        <datalist id="modeloList">
+                        <div className="group">
+                            <img src="../public/user.svg" alt="Nombre" className="icon" />
+                            <input type="text" name="Name" placeholder="Nombre" 
+                            required title="Nombre y apellido" className="input"/>
+                        </div>
+                        <div className="group">
+                            <img src="../public/email.svg" alt="email" className="icon" />
+                            <input type="email" name="email" 
+                            placeholder="email" required title="email" className="input"/>
+                        </div>
+                        <div className="group">
+                            <img src="../public/PLC.svg" alt="Modelo" className="icon" />
+                            <input list="modeloList" name="Model" 
+                            placeholder="Modelo" required onChange={HandleIps}
+                            className="input"/>
+                            <datalist id="modeloList">
                             {
                                 newData.map(element=>{
                                     if(element?.Marca){
@@ -106,24 +119,32 @@ function Prestamo({data,FilterValue,SetLog}){
                                     
                                 })
                             }
-                        </datalist>
-                        <input list="IpList" name="DirIp" placeholder="Dirección IP/Otros" 
-                        title="Dirección IP del dispositivo" autoComplete="off"/>
-                            <datalist id="IpList">
-                                {
-                                        IpLists.map(element=>{
-                                            if(element?.DirIp){
-                                                return(
-                                                    <option key={`${element.Id}-${element.DirIp}`} value={element.DirIp}></option>
-                                                )
-                                            }
-                                            
-                                        })   
-                                }
                             </datalist>
-                        <input type="text" name="ExpasionModule" placeholder="Módulo de expansión" 
-                        title="Si el dispositivo prestado tiene módulo de expasion colocar el modelo del mismo" 
-                        required/>
+                        </div>
+                        <div className="group">
+                            <img src="../public/IP.svg" alt="" className="icon" />
+                            <input list="IpList" name="DirIp" placeholder="Dirección IP/Otros" 
+                            title="Dirección IP del dispositivo" autoComplete="off" className="input"/>
+                                <datalist id="IpList">
+                                    {
+                                            IpLists.map(element=>{
+                                                if(element?.DirIp){
+                                                    return(
+                                                        <option key={`${element.Id}-${element.DirIp}`} value={element.DirIp}></option>
+                                                    )
+                                                }
+                                                
+                                            })   
+                                    }
+                            </datalist>
+                        </div>
+                        <div className="group">
+                            <img src="../public/espansionModule.svg" alt="" className="icon" />
+                            <input type="text" name="ExpasionModule" placeholder="Módulo de expansión" 
+                            title="Si el dispositivo prestado tiene módulo de expasion colocar el modelo del mismo" 
+                            required className="input"/>
+                        </div>
+ 
                         <div className="password-button">
                             <button>Realizar prestamo</button>
                         </div>

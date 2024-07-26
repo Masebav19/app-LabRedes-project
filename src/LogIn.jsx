@@ -34,7 +34,11 @@ function LogIn({SetLog}){
                 <form  method="POST" onSubmit={HandleSubmit}>
                     <fieldset>
                         <label htmlFor="InputPaswoord"></label>
-                        <input className="InputPaswoord" type="password" name='InputPaswoord' placeholder="Password"/>
+                        <div className="group">
+                            <img  className="icon" src="../public/password.svg" alt="Password" />
+                            <input className="input" type="password" name='InputPaswoord' placeholder="Password"/>
+                        </div>
+                        
                         <div className="password-button">
                         <button>Ingresar</button>
                         </div>

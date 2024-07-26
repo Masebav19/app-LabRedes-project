@@ -63,38 +63,49 @@ function Devolucion({data,SetLog}){
                 <form action="POST" onSubmit={HandleSubmit}>
                     <fieldset>
                         <legend>Datos para devolución</legend>
-                        <label htmlFor="email">email</label>
-                        <input list="emailList" name="email" placeholder="example@algo.com" required title="email" autoComplete="off" size="25"/>
-                        <datalist id="emailList">
-                            {
-                                email.map((element)=>{
-                                    return(
-                                        <option key={element.email} value={element.email}></option>
-                                    )
-                                })
-                            }
-                        </datalist>
-
-                        <label htmlFor="Model">email</label>
-                        <input list="ModelList" name="Model" placeholder="Modelo" required title="Modelo" autoComplete="off"/>
-                        <datalist id="ModelList">
-                            {
-                                model.map((element)=>{
-                                    return(
-                                        <option key={element.Modelo} value={element.Modelo}></option>
-                                    )
-                                })
-                            }
-                        </datalist>
-
-                        <label htmlFor="Estado">Observaciones</label>
-                        <input type="text" name="Estado" defaultValue={"Ninguno"} title="Colocar el estado del PLC" required/>
-
-                        <label htmlFor="Summary">Observaciones</label>
-                        <input type="text" name="Summary" defaultValue={"Ninguno"} title="Colocar una observacion" size="30" required/>
-
-                        <label htmlFor="Responsable">Docente responsable</label>
-                        <input type="email" name="Responsable" defaultValue={"mateo.vasquez@epn.edu.ec"} title="Colocar el correo del docente responsable" size="25" required/>
+                        <div className="group">
+                            <img src="../public/email.svg" alt="" className="icon" />
+                            <input list="emailList" name="email" placeholder="example@algo.com" 
+                            required title="email" autoComplete="off" size="25" className="input"/>
+                            <datalist id="emailList">
+                                {
+                                    email.map((element)=>{
+                                        return(
+                                            <option key={element.email} value={element.email}></option>
+                                        )
+                                    })
+                                }
+                            </datalist>
+                        </div>
+                        <div className="group">
+                            <img src="../public/PLC.svg" alt="" className="icon" />
+                            <input list="ModelList" name="Model" placeholder="Modelo" 
+                            required title="Modelo" autoComplete="off" className="input"/>
+                            <datalist id="ModelList">
+                                {
+                                    model.map((element)=>{
+                                        return(
+                                            <option key={element.Modelo} value={element.Modelo}></option>
+                                        )
+                                    })
+                                }
+                            </datalist>
+                        </div>
+                        <div className="group">
+                            <img src="../public/state.svg" alt="" className="icon" />
+                            <input type="text" name="Estado" placeholder="Estado OK/Bad" 
+                            title="Colocar el estado del PLC" required className="input"/>
+                        </div>
+                        <div className="group">
+                            <img src="../public/observation.svg" alt="" className="icon" />
+                            <input type="text" name="Summary" placeholder="Observaciones" 
+                            title="Colocar una observacion" size="30" required className="input"/>
+                        </div>
+                        <div className="group">
+                            <img src="../public/docente.svg" alt="" className="icon" />
+                        <input type="email" name="Responsable" defaultValue={"mateo.vasquez@epn.edu.ec"} 
+                        title="Colocar el correo del docente responsable" size="25" className="input" required/>
+                        </div>
                         <div className="password-button">
                             <button>Realizar devolucion</button>
                         </div>

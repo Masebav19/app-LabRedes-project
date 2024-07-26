@@ -27,13 +27,17 @@ function Menu({ SetAction }){
                 <fieldset>
                     <legend>Menu</legend>
                     <form action="POST" onSubmit={HandleSubmit}>
-                        <input list="option" name="input" className="input" autocomplete="off" required placeholder="Escoja la opción"/>
-                            <datalist id="option">
-                                <option value="Prestamo"></option>
-                                <option value="Devolucion"></option>
-                                <option value="Detalle"></option>
-                                <option value="Mantenimiento"></option>
-                            </datalist>
+                        <div className="group">
+                            <img className="icon" src="../public/menu.svg" alt="" />
+                            <input list="option" name="input" className="input" autocomplete="off" required placeholder="Escoja la opción"/>
+                                <datalist id="option">
+                                    <option value="Prestamo"></option>
+                                    <option value="Devolucion"></option>
+                                    <option value="Detalle"></option>
+                                    <option value="Mantenimiento"></option>
+                                </datalist>
+                        </div>
+                        
                         <div className="password-button">
                             <button>Aplicar</button>
                         </div>
