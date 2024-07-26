@@ -88,13 +88,13 @@ function Devolucion({data,SetLog}){
                         </datalist>
 
                         <label htmlFor="Estado">Observaciones</label>
-                        <input type="text" name="Estado" defaultValue={"Ninguno"} title="Colocar el estado del PLC"/>
+                        <input type="text" name="Estado" defaultValue={"Ninguno"} title="Colocar el estado del PLC" required/>
 
                         <label htmlFor="Summary">Observaciones</label>
-                        <input type="text" name="Summary" defaultValue={"Ninguno"} title="Colocar una observacion" size="30"/>
+                        <input type="text" name="Summary" defaultValue={"Ninguno"} title="Colocar una observacion" size="30" required/>
 
                         <label htmlFor="Responsable">Docente responsable</label>
-                        <input type="email" name="Responsable" defaultValue={"mateo.vasquez@epn.edu.ec"} title="Colocar el correo del docente responsable" size="25"/>
+                        <input type="email" name="Responsable" defaultValue={"mateo.vasquez@epn.edu.ec"} title="Colocar el correo del docente responsable" size="25" required/>
                         <div className="password-button">
                             <button>Realizar devolucion</button>
                         </div>

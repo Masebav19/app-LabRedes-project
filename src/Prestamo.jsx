@@ -123,7 +123,7 @@ function Prestamo({data,FilterValue,SetLog}){
                             </datalist>
                         <input type="text" name="ExpasionModule" placeholder="Módulo de expansión" 
                         title="Si el dispositivo prestado tiene módulo de expasion colocar el modelo del mismo" 
-                        />
+                        required/>
                         <div className="password-button">
                             <button>Realizar prestamo</button>
                         </div>
