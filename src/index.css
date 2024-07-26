@@ -4,8 +4,8 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #242424;
+  background-color:  #E9F1FA;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -25,12 +25,12 @@ body {
   align-items: center;
   align-content: center;
   padding: 20px;
-  border: 2px solid #ffffff55;
+  border: 2px solid #00ABE4;
   border-radius: 10px;
 }
 .Major-container:hover{
   transform: scale(1.01);
-  box-shadow: 4px 2px 2px 2px #676a88de;
+  box-shadow: 4px 2px 2px 2px #63d8ff;
 }
 
 form{
@@ -44,10 +44,10 @@ input {
   font-family: inherit;
   width: 100%;
   border: none;
-  border-bottom: 2px solid #9b9b9b;
+  border-bottom: 2px solid #00ABE4;
   outline: 0;
   font-size: 17px;
-  color: #fff;
+  color: #242424;
   background: transparent;
   padding: 7px 0;
   transition: border-color 0.2s;
@@ -57,7 +57,7 @@ input:focus {
   padding-bottom: 6px;
   font-weight: 700;
   border-width: 3px;
-  border-image: linear-gradient(to right, #fdfdfd, #0d1436);
+  border-image: linear-gradient(to right, #fdfdfd, #63d8ff);
   border-image-slice: 1;
 }
 .password-button{

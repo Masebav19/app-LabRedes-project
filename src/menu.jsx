@@ -25,7 +25,7 @@ function Menu({ SetAction }){
 
             <span>
                 <fieldset>
-                    <legend>Log In</legend>
+                    <legend>Menu</legend>
                     <form action="POST" onSubmit={HandleSubmit}>
                         <input list="option" name="input" className="input" autocomplete="off" required placeholder="Escoja la opción"/>
                             <datalist id="option">
