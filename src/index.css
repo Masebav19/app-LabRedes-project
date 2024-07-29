@@ -18,8 +18,6 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
-  background-image: url("../public/fondo.jpg");
-  
 }
 
 .Major-container{
@@ -33,7 +31,8 @@ body {
 }
 .Major-container:hover{
   transform: scale(1.01);
-  box-shadow: 4px 2px 2px 2px #5168cf;
+  box-shadow: 4px 2px 2px 2px #63d8ff;
+  
 }
 
 form{
@@ -79,8 +78,7 @@ button:hover{
   outline: none;
   background-color: transparent;
   color: #0d0c22;
-  font-weight: bold;
-  border: 0.5px solid #4ca6c455;
+  border: 0.5px solid #63d8ff55;
 }
 
 
