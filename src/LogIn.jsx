@@ -24,10 +24,10 @@ function LogIn({SetLog}){
     return (
         <>
             <header>
-                <h1>Laboratorio de redes idnustriales</h1>
+                <h1>Laboratorio de redes industriales</h1>
             </header>
             <article>
-                <h2>Plataforma de prestamos de quipos</h2>
+                <h2>Plataforma de prestamos de equipos</h2>
                 <h3>Ingrese la contraseña</h3>
             </article>
             <span>
