@@ -10,8 +10,8 @@ function Panel({SetLog}){
     const [data,setData] = useState(undefined)
     const [FilterValue,SetFilterValue]= useState(undefined)
     useEffect(()=>{
-        if (menuAction == "Prestamo"){
-            requestServer("Prestamo").then((value)=>{
+        if (menuAction == "Prestamo"|| menuAction === "Mantenimiento"){
+            requestServer(menuAction.toLowerCase()).then((value)=>{
                 const SetValue = new Set(value.map((newValue)=>{return newValue.Marca}))
                 let data = [];
                 SetValue.forEach((element)=>{
@@ -48,7 +48,9 @@ function Panel({SetLog}){
            {menuAction === "Detalle" && <MainDetalle
            SetLog={SetLog}
            />}
-           
+           {menuAction === "Mantenimiento" && data && <Mantenimiento
+           SetLog={SetLog}
+           />}
         </>
     );
 }
