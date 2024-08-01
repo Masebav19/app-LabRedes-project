@@ -15,6 +15,10 @@ function Detalle ({User,SetLog}){
         })
     }
 
+    async function requestInfo(type){
+        const result = await axios(`http://172.31.36.30:4000/api/detalle/${type}-${User}`)
+        return result.data
+    }
     function ShowDevices({deviceInfo}){
         return(
             <>
