@@ -145,7 +145,7 @@ function Prestamo({data,FilterValue,SetLog}){
                             required className="input"/>
                         </div>
  
-                        <div className="password-button">
+                        <div className="group-button">
                             <button>Realizar prestamo</button>
                         </div>
                         

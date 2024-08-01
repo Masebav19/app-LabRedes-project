@@ -43,11 +43,13 @@ fieldset{
   display: grid;
 }
 
-.password-button{
-  display: grid;
+.group-button{
+  display: flex;
   padding-top: 4vh;
 }
 button{
+  flex-basis: 100dvw;
+  justify-content: space-between;
   box-shadow: 3px 3px 10px rgba(0,0,0,1),
   -1px -1px 6px rgba(255, 255, 255, 0.4);
   border-radius: 10px;

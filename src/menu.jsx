@@ -38,7 +38,7 @@ function Menu({ SetAction }){
                                 </datalist>
                         </div>
                         
-                        <div className="password-button">
+                        <div className="group-button">
                             <button>Aplicar</button>
                         </div>
                     </form>

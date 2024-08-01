@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import Menu from './menu.jsx'
 import Prestamo from './Prestamo.jsx'
 import Devolucion from './Devolucion.jsx';
+import MainDetalle from './MainDetalle.jsx'
 import axios from 'axios'
 
 function Panel({SetLog}){
@@ -43,6 +44,9 @@ function Panel({SetLog}){
            {menuAction==="Devolucion" && data && <Devolucion
             data = {data}
             SetLog = {SetLog}
+           />}
+           {menuAction === "Detalle" && <MainDetalle
+           SetLog={SetLog}
            />}
            
         </>

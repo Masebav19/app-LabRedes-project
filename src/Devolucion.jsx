@@ -106,7 +106,7 @@ function Devolucion({data,SetLog}){
                         <input type="email" name="Responsable" defaultValue={"mateo.vasquez@epn.edu.ec"} 
                         title="Colocar el correo del docente responsable" size="25" className="input" required/>
                         </div>
-                        <div className="password-button">
+                        <div className="group-button">
                             <button>Realizar devolucion</button>
                         </div>
                         
