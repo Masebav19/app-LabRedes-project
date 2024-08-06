@@ -26,24 +26,31 @@ body {
   flex-direction: column;
   align-items: center;
   align-content: center;
+  text-align: center;
   padding: 20px;
   border: 2px solid #0296c7;
   border-radius: 10px;
   background: #ffffffaa;
-  min-width: 50vw;
-  min-height: 50vh;
+
 }
 .Major-container:hover{
   transform: scale(1.01);
   box-shadow: 4px 2px 2px 2px #63d8ff;
   
 }
-
+p,ul,li{
+  text-align: left;
+}
+span{
+  width: 50dvw;
+}
 form{
   display: flexbox;
 }
 fieldset{
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
 }
 
 .group-button{
@@ -75,7 +82,7 @@ button:hover{
 }
 
 .input {
-  width: 100%;
+  width: 90%;
   line-height: 30px;
   padding: 0 5rem;
   padding-left: 3rem;
@@ -110,13 +117,15 @@ button:hover{
   align-items: center;
   align-content: center;
   text-align: center;
+  justify-content: space-around;
 }
 
 .Navigation{
   border: 1px solid rgb(111, 188, 240);
-  padding: 3px;
+  padding: 1px;
   border-radius: 10px;
-  margin: 2px;
+  margin: 0;
+
 }
 
 .Navigation:hover{
@@ -126,4 +135,39 @@ button:hover{
 }
 .Navigation[active]{
   background-color: transparent;
+}
+.Detail.Firts:first-child{
+  margin-top: 10px;
+}
+.Detail.Firts{
+  border: 1px solid #2275a5;
+  border-radius: 10px;
+  margin: 0;
+  list-style: none;
+}
+
+.Detail.Second{
+  border-top: 2px solid #000;
+  list-style: none;
+}
+
+.NavContainer{
+  display: flex;
+  border: 2px solid #9bd6f8c9;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 12px;
+}
+.BarOption{
+  flex:1;
+  border-right: 2px solid #9bd6f8c9;
+  padding: 0.3vw;
+  background: #9bd6f8c9;
+}
+.BarOption:last-child{
+  border-right: 0;
+}
+.BarOption:hover{
+  background: linear-gradient(to right,transparent,#77cbfc);
+  cursor: pointer;
 }

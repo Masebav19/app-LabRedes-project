@@ -41,16 +41,19 @@ function Panel({SetLog}){
             data = {data}
             FilterValue = {FilterValue}
             SetLog = {SetLog}
+            SetAction= {SetAction}
            />}
            {menuAction==="Devolucion" && data && <Devolucion
             data = {data}
             SetLog = {SetLog}
+            SetAction= {SetAction}
            />}
            {menuAction === "Detalle" && <MainDetalle
            SetLog={SetLog}
            />}
            {menuAction === "Mantenimiento" && <Mantenimiento
            SetLog={SetLog}
+           SetAction= {SetAction}
            />}
         </>
     );

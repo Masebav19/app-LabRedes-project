@@ -57,6 +57,7 @@ function Prestamo({data,FilterValue,SetLog}){
         })
         return result.data
     }
+    
         return(
         <>
             <header>

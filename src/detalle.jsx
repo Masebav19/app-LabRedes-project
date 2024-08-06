@@ -25,27 +25,27 @@ function Detalle ({User,SetLog}){
                 {
                     deviceInfo.map((device)=>{
                         return(
-                            <ul>
+                            <ul className="Detail Firts">
                                 <li
                                 key={`${device.Prestamos_Id}_${device.Modelo}}`}>Modelo : {device.Modelo}</li>
-                                <ul>
-                                    <li
+                                <ul className="Detail Second">
+                                    <li className="Li-Description" 
                                     key={`${device.Prestamos_Id}_${device.Nombre}}`}>Nombre: {device.Nombre}</li>
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.email}}`}>email: {device.email}</li>
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.Direccion_IP}}`}>Direccion IP/Espacificaciones: {device.Direccion_IP}</li>
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.Estado}}`}>Estado: {device.Estado}</li>
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.Estado_prestamo}}`}>Estado Prestamo: {device.Estado_prestamo}</li>
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.Fecha}}`}>Fecha: {device.Fecha}</li>
                                     {(device.ModulosExpansion !== "Ninguno" || device.ModulosExpansion !== "") && 
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.ModulosExpansion}}`}>Módulos de expasión: {device.ModulosExpansion}</li>}
                                     {device?.DocenteResponsable &&
-                                    <li
+                                    <li className="Li-Description"
                                     key={`${device.Prestamos_Id}_${device.DocenteResponsable}}`}>Docente Responsable: {device.DocenteResponsable}</li>}
                                 </ul>
                             </ul>

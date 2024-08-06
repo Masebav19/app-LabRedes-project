@@ -21,6 +21,8 @@ function DetalleLogin({SetUser}){
         })
         return result.data
     }
+
+
     return(
         <>
             <header>
