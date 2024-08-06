@@ -23,7 +23,6 @@ function Devolucion({data,SetLog}){
         const form = e.target;
         const formData = new FormData(form)
         const {email,Model,Summary,Responsable,Estado} = Object.fromEntries(formData.entries())
-        console.log({email,Model,Summary,Responsable,Estado})
         requestServer(email,Model,Summary,Responsable,Estado).then(result=>{
             if (result.Response=== "Succesfull"){
                 alert("Devolucion realizada, revisa tu correo!")
@@ -51,12 +50,11 @@ function Devolucion({data,SetLog}){
     }
     return(
         <>
-             <header>
+            <header>
                 <h1>Laboratorio de redes industriales</h1>
             </header>
             <article>
                 <h2>Plataforma de prestamo de equipos</h2>
-                <h3>Seleccione lo que desea realizar</h3>
                 <h4>Ingrese todos los campos</h4>
             </article> 
             <span>

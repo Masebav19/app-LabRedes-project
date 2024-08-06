@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react';
 import Menu from './menu.jsx'
 import Prestamo from './Prestamo.jsx'
 import Devolucion from './Devolucion.jsx';
-import MainDetalle from './MainDetalle.jsx'
+import MainDetalle from './MainDetalle.jsx';
+import Mantenimiento from './Mantenimiento.jsx';
 import axios from 'axios'
 
 function Panel({SetLog}){
@@ -10,7 +11,7 @@ function Panel({SetLog}){
     const [data,setData] = useState(undefined)
     const [FilterValue,SetFilterValue]= useState(undefined)
     useEffect(()=>{
-        if (menuAction == "Prestamo"|| menuAction === "Mantenimiento"){
+        if (menuAction == "Prestamo"){
             requestServer(menuAction.toLowerCase()).then((value)=>{
                 const SetValue = new Set(value.map((newValue)=>{return newValue.Marca}))
                 let data = [];
@@ -48,7 +49,7 @@ function Panel({SetLog}){
            {menuAction === "Detalle" && <MainDetalle
            SetLog={SetLog}
            />}
-           {menuAction === "Mantenimiento" && data && <Mantenimiento
+           {menuAction === "Mantenimiento" && <Mantenimiento
            SetLog={SetLog}
            />}
         </>
